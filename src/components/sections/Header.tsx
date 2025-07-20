@@ -16,7 +16,7 @@ const Header = () => {
         { id: 2, title: "Islamic Finance", path: '/materials' },
         { id: 3, title: "Special Shariah Board", path: "/council" },
         { id: 4, title: "Programs", path: "/programs" },
-        { id: 5, title: "Contact", path: '/contact' },
+        { id: 5, title: "Contact", path: '/contact' }
     ]
 
     useEffect(() => {
