@@ -1,6 +1,6 @@
 'use client';
-import Uzb from '../../assets/uzbekistan-svgrepo-com.svg'
-import Eng from '../../assets/united-kingdom-uk-svgrepo-com.svg'
+import * as Uzb from '../../assets/uzbekistan-svgrepo-com.svg'
+import * as Eng from '../../assets/united-kingdom-uk-svgrepo-com.svg'
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +30,7 @@ export const LanguageSelector = () => {
         <div className="relative">
             <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2">
                 <span className="flex items-center gap-2">
-                    <img src={currentLanguage.icon} alt="Uzbekistan Flag" width={20} height={20} className="inline-block" />
+                    <img src={currentLanguage.icon.default} alt={currentLanguage.name + " Flag"} width={20} height={20} className="inline-block" />
                     <span className="hidden sm:inline">{currentLanguage.name}</span>
                 </span>
                 <svg className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ export const LanguageSelector = () => {
                     <div className="py-1">
                         {languages.map((language) => (
                             <button key={language.code} onClick={() => changeLanguage(language.code)} className={`flex items-center gap-3 w-full px-4 py-2 text-left text-sm ${currentLang === language.code ? 'bg-blue-50 text-blue-600 dark:text-blue-400' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}`}>
-                                <img src={language.icon} alt="Uzbekistan Flag" width={20} height={20} className="inline-block" />
+                                <img src={language.icon.default} alt={language.name + " Flag"} width={20} height={20} className="inline-block" />
                                 {language.name}
                             </button>
                         ))}
