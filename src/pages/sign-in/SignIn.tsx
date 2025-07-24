@@ -30,7 +30,9 @@ export default function SignIn() {
             if (response.status === 200) {
                 const token = response.data.data.tokens?.accessToken;
                 const user = response.data.data.user.full_name;
+                const phone_number = response.data.data.user.phone_number
                 localStorage.setItem("user", JSON.stringify(user));
+                localStorage.setItem('phone_number', JSON.stringify(phone_number))
                 localStorage.setItem("token", token)
                 toast.success(t('Siz muvaffaqiyatli tizimga kirdingiz!'));
                 console.log('response.data');

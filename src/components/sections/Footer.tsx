@@ -1,36 +1,50 @@
 import { useTranslation } from "react-i18next";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     const { t } = useTranslation();
     return (
-        <footer className="bg-teal-800 text-white p-6">
-            <div className="flex justify-between">
-                <div>
-                    <h2 className="text-lg font-bold mb-2">Get in Touch</h2>
-                    <p className="flex items-center">
-                        <span className="mr-1">📍</span>
-                        Tashkent City, Mirzo Ulugbek District, Lashkarbegi MFY, 59 Independence
+        <footer className="bg-[#103741] text-white px-[100px] pt-[50px] pb-[20px]">
+            <div className="flex gap-[20px]">
+                <div className="space-y-4">
+                    <strong className="text-[28px] leading-[30px] font-bold mb-5 inline-block">Get in Touch</strong>
+                    <p className="flex items-center text-[#889ba0] cursor-pointer hover:text-[#fe5d37] transition duration-200">
+                        <span className="mr-1">
+                            <FaMapMarkerAlt color="#889ba0" width={22} height={22} />
+                        </span>
+                        {t('Tashkent City, Mirzo Ulugbek District, Lashkarbegi MFY, 59 Independence')}
                     </p>
-                    <p>+998 99 051 18 81</p>
-                    <p>Email: <a href="mailto:Info@Al-Muamalat.Uz" className="underline">Info@Al-Muamalat.Uz</a></p>
+                    <Link to={'tel:+998990511881'} className="flex items-center">
+                        <span className="mr-1">
+                            <FaPhoneAlt color="#889ba0" width={22} height={22} />
+                        </span>
+                        <p className="text-[15px] leading-[100%] text-[#889ba0] hover:text-[#fe5d37] transition duration-200">+998 99 051 18 81</p>
+                    </Link>
+                    <Link to={"mailto:Info@Al-Muamalat.Uz"} className="flex items-center">
+                        <span className="mr-1">
+                            <FaEnvelope color="#889ba0" width={22} height={22} />
+                        </span>
+                        <p className="text-[15px] leading-[100%] text-[#889ba0] hover:text-[#fe5d37] transition duration-200">Info@Al-Muamalat.Uz</p>
+                    </Link>
                 </div>
                 <div>
-                    <h2 className="text-lg font-bold mb-2">Quick Links</h2>
+                    <strong className="text-[28px] leading-[30px] font-bold mb-5 inline-block">{t('Quick Links')}</strong>
                     <ul>
                         <li>
-                            <a href="#" className="hover:text-teal-300 transition duration-200">Special Shariah Board</a>
+                            <a href="#" className="text-[15px] leading-[100%] text-[#889ba0] hover:text-[#fe5d37] transition duration-200">{t('Special Shariah Board')}</a>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-teal-300 transition duration-200">Contact</a>
+                            <a href="#" className="text-[15px] leading-[100%] text-[#889ba0] hover:text-[#fe5d37] transition duration-200">{t('Contact')}</a>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-teal-300 transition duration-200">Islamic Finance</a>
+                            <a href="#" className="text-[15px] leading-[100%] text-[#889ba0] hover:text-[#fe5d37] transition duration-200">{t('Islamic Finance')}</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div className="border-t border-gray-700 mt-4 pt-2 text-center text-sm">
-                <p>© Al Muamalat. Barcha Huquqlar Himoyalangan. <span className="underline">Developer</span></p>
+                <p>{t('© Al Muamalat. Barcha Huquqlar Himoyalangan.')} <span className="underline">Developer</span></p>
             </div>
         </footer>
     )
